@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Kenga" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- ShareIngestActivity trampoline: invisible (Octo pattern). -->
+    <style name="Theme.Kenga.Translucent" parent="android:Theme.Translucent.NoTitleBar" />
+</resources>

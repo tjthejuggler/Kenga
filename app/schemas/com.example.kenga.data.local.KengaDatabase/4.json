@@ -1,0 +1,373 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "fa7f2c148ee126fe8452c46a5540a04f",
+    "entities": [
+      {
+        "tableName": "videos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`videoId` TEXT NOT NULL, `url` TEXT NOT NULL, `title` TEXT NOT NULL, `channel` TEXT NOT NULL, `durationMs` INTEGER NOT NULL, `thumbnailPath` TEXT, `videoFilePath` TEXT, `downloadedAt` INTEGER, `addedAt` INTEGER NOT NULL, `analysisState` TEXT NOT NULL, `analyzedAt` INTEGER, `muscleGroups` TEXT NOT NULL, `exercises` TEXT NOT NULL, `transcriptText` TEXT NOT NULL, `transcriptSource` TEXT NOT NULL, PRIMARY KEY(`videoId`))",
+        "fields": [
+          {
+            "fieldPath": "videoId",
+            "columnName": "videoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channel",
+            "columnName": "channel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMs",
+            "columnName": "durationMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "thumbnailPath",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "videoFilePath",
+            "columnName": "videoFilePath",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "downloadedAt",
+            "columnName": "downloadedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "addedAt",
+            "columnName": "addedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "analysisState",
+            "columnName": "analysisState",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "analyzedAt",
+            "columnName": "analyzedAt",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "muscleGroups",
+            "columnName": "muscleGroups",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exercises",
+            "columnName": "exercises",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transcriptText",
+            "columnName": "transcriptText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transcriptSource",
+            "columnName": "transcriptSource",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "videoId"
+          ]
+        }
+      },
+      {
+        "tableName": "set_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ts` INTEGER NOT NULL, `muscleGroupId` TEXT NOT NULL, `exerciseName` TEXT NOT NULL, `weightGrams` INTEGER NOT NULL, `reps` INTEGER NOT NULL, `machine` INTEGER NOT NULL, `date` TEXT NOT NULL, `tailSyncState` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ts",
+            "columnName": "ts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "muscleGroupId",
+            "columnName": "muscleGroupId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseName",
+            "columnName": "exerciseName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightGrams",
+            "columnName": "weightGrams",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reps",
+            "columnName": "reps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machine",
+            "columnName": "machine",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tailSyncState",
+            "columnName": "tailSyncState",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "exercises",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `muscleGroupId` TEXT NOT NULL, `source` TEXT NOT NULL, `lastUsedAt` INTEGER NOT NULL, `aliases` TEXT NOT NULL, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "muscleGroupId",
+            "columnName": "muscleGroupId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastUsedAt",
+            "columnName": "lastUsedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aliases",
+            "columnName": "aliases",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "name"
+          ]
+        }
+      },
+      {
+        "tableName": "tail_snapshots",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`habitName` TEXT NOT NULL, `date` TEXT NOT NULL, `machineWeightG` INTEGER NOT NULL, `machineReps` INTEGER NOT NULL, `freeWeightG` INTEGER NOT NULL, `freeReps` INTEGER NOT NULL, `machineExercise` TEXT, `freeExercise` TEXT, PRIMARY KEY(`habitName`, `date`))",
+        "fields": [
+          {
+            "fieldPath": "habitName",
+            "columnName": "habitName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineWeightG",
+            "columnName": "machineWeightG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineReps",
+            "columnName": "machineReps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "freeWeightG",
+            "columnName": "freeWeightG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "freeReps",
+            "columnName": "freeReps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineExercise",
+            "columnName": "machineExercise",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "freeExercise",
+            "columnName": "freeExercise",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "habitName",
+            "date"
+          ]
+        }
+      },
+      {
+        "tableName": "pbs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`exerciseName` TEXT NOT NULL, `habitName` TEXT NOT NULL, `bestWeightGrams` INTEGER NOT NULL, `bestReps` INTEGER NOT NULL, `bestWeightDate` TEXT, `bestRepsDate` TEXT, `lastDate` TEXT, PRIMARY KEY(`exerciseName`))",
+        "fields": [
+          {
+            "fieldPath": "exerciseName",
+            "columnName": "exerciseName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "habitName",
+            "columnName": "habitName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bestWeightGrams",
+            "columnName": "bestWeightGrams",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bestReps",
+            "columnName": "bestReps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bestWeightDate",
+            "columnName": "bestWeightDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "bestRepsDate",
+            "columnName": "bestRepsDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastDate",
+            "columnName": "lastDate",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "exerciseName"
+          ]
+        }
+      },
+      {
+        "tableName": "tail_habit_entries",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`habitName` TEXT NOT NULL, `subtype` TEXT NOT NULL, `date` TEXT NOT NULL, `value` INTEGER NOT NULL, `ts` INTEGER NOT NULL, PRIMARY KEY(`habitName`, `subtype`, `date`))",
+        "fields": [
+          {
+            "fieldPath": "habitName",
+            "columnName": "habitName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtype",
+            "columnName": "subtype",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ts",
+            "columnName": "ts",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "habitName",
+            "subtype",
+            "date"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fa7f2c148ee126fe8452c46a5540a04f')"
+    ]
+  }
+}

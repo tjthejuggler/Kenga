@@ -1,0 +1,55 @@
+# --- Gradle / build artifacts ---
+.gradle/
+build/
+*/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# --- Local configuration (machine-specific, NEVER commit) ---
+local.properties
+
+# --- Secrets & signing (defensive: never commit even if added later) ---
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+secrets.properties
+secrets.xml
+.env
+.env.*
+
+# --- Android Studio / IntelliJ ---
+.idea/
+*.iml
+*.ipr
+*.iws
+captures/
+.externalNativeBuild/
+.cxx/
+
+# --- Kotlin session data ---
+.kotlin/
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Logs / crash dumps / profiling ---
+*.log
+*.hprof
+hs_err_pid*
+
+# --- codebase-memory MCP index (local knowledge graph) ---
+.codebase-memory/
+
+# --- Python tooling (scripts/ helpers) ---
+__pycache__/
+*.pyc
+.venv/

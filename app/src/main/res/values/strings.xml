@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">Kenga</string>
+
+    <!-- Home-screen widget (KengaWidgetProvider) -->
+    <string name="kenga_widget_label">Kenga</string>
+    <string name="kenga_widget_description">The kangaroo-man from your dashboard. Tap to open Kenga.</string>
+    <string name="kenga_widget_item_description">The Kenga kangaroo-man</string>
+
+    <!-- Share ingestion (ShareIngestActivity) -->
+    <string name="share_activity_label">Add to Kenga</string>
+    <string name="share_added">Added to Kenga 🦘</string>
+    <string name="share_invalid_url">No YouTube video link found</string>
+
+    <!-- Library screen -->
+    <string name="library_title">Library</string>
+    <string name="library_subtitle">your lifting reference videos</string>
+    <string name="library_empty_title">Your library is empty</string>
+    <string name="library_empty_body">Share a YouTube video from the YouTube app\u2019s share menu and pick Kenga — it will appear here. You can also tap + to paste a link.</string>
+    <string name="library_add_url">Paste video URL</string>
+    <string name="library_add">Add</string>
+    <string name="library_cancel">Cancel</string>
+    <string name="library_url_hint">https://youtube.com/watch?v=…</string>
+    <string name="library_add_failed">Couldn\u2019t parse a YouTube URL</string>
+    <string name="library_delete_title">Delete video?</string>
+    <string name="library_delete_body">Removes any downloaded files and the library entry. You can always re-share the video later.</string>
+    <string name="library_delete_confirm">Delete</string>
+    <string name="library_delete">Delete</string>
+    <string name="library_menu">More options</string>
+    <string name="library_refresh">Refresh info</string>
+    <string name="library_filter_muscles">Filter by muscle group</string>
+    <string name="library_filter_clear">Clear</string>
+    <string name="library_no_match">No videos match</string>
+    <string name="library_state_pending_download">Queued</string>
+    <string name="library_state_downloading">Downloading…</string>
+    <string name="library_state_downloading_percent">Downloading… %1$d%%</string>
+    <string name="library_state_downloaded">Downloaded</string>
+    <string name="library_state_analysis_pending">Analysis queued</string>
+    <string name="library_state_running">Analyzing…</string>
+    <string name="library_state_done">Analyzed</string>
+    <string name="library_state_failed">Failed</string>
+
+    <!-- Video detail screen -->
+    <string name="video_detail_title">Video</string>
+    <string name="video_detail_back">Back</string>
+    <string name="video_detail_unknown">Unknown video 🦘</string>
+    <string name="video_detail_analysis_none">Not analyzed yet — download the video or use Settings → Reanalyse all.</string>
+    <string name="video_detail_analysis_running">Analyzing… 🦘</string>
+    <string name="video_detail_analysis_pending">Analysis queued</string>
+    <string name="video_detail_analysis_failed">Analysis failed — reanalyse from Settings.</string>
+    <string name="video_detail_analysis_confidence">%1$d%%</string>
+
+    <!-- Settings (Phase 4) -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_llm_section">Analysis engine (LLM)</string>
+    <string name="settings_llm_base_url">Base URL</string>
+    <string name="settings_llm_base_url_hint">GLM Coding Plan: https://api.z.ai/api/coding/paas/v4</string>
+    <string name="settings_llm_api_key">API key</string>
+    <string name="settings_llm_model">Model</string>
+    <string name="settings_show">Show</string>
+    <string name="settings_hide">Hide</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_saved">Saved ✓</string>
+    <string name="settings_test_llm">Test LLM</string>
+    <string name="settings_test_running">Testing…</string>
+    <string name="settings_test_ok">OK — %1$s</string>
+    <string name="settings_test_failed">Failed: %1$s</string>
+    <string name="settings_reanalyze_section">Analysis</string>
+    <string name="settings_reanalyze_hint">Re-run transcript + muscle/exercise analysis for every library video with the saved settings.</string>
+    <string name="settings_reanalyze_button">Reanalyse all</string>
+    <string name="settings_reanalyze_queued">Queued — runs in the background</string>
+    <string name="settings_reanalyze_done">Done ✓</string>
+    <string name="settings_reanalyze_needs_key">Enter an API key first</string>
+    <string name="settings_reassociate_hint">Re-run muscle-group association for every exercise Kenga mapped itself (body-weight habits included) — exercises you mapped by hand are kept.</string>
+    <string name="settings_reassociate_button">Reassociate muscle groups</string>
+    <string name="settings_reassociate_running">Re-associating…</string>
+    <string name="settings_reassociate_done">Done ✓</string>
+    <string name="settings_reassociate_failed">Failed — see logs</string>
+    <string name="settings_tail_section">Tail 🦎</string>
+    <string name="settings_tail_checking">Checking Tail…</string>
+    <string name="settings_tail_connected">Tail connected — weights v3 ready ✓</string>
+    <string name="settings_tail_no_v3">Tail installed, but weights v3 is unavailable (older version?).</string>
+    <string name="settings_tail_absent">Tail not installed.</string>
+    <string name="settings_tail_offline_hint">Sets are kept locally and synced when Tail returns. You can still map habits below.</string>
+    <string name="settings_tail_unit">Unit</string>
+    <string name="settings_tail_none">None</string>
+    <string name="settings_tail_habit_label">Tail habit</string>
+    <string name="settings_tail_sync_now">Sync now</string>
+    <string name="settings_tail_bodyweight_section">Body-weight habits</string>
+    <string name="settings_tail_bodyweight_hint">Map plain Tail habits (pull-ups, push-ups, squats, sit-ups…) to Kenga exercise names. Kenga pulls their counts from Tail and the analysis engine associates them with muscle groups.</string>
+    <string name="settings_tail_bodyweight_manage">Manage associations (%1$d mapped)</string>
+    <string name="settings_tail_bodyweight_associations">Muscle associations</string>
+    <string name="settings_muscle_group_none">None</string>
+    <string name="settings_tail_bodyweight_search">Search habits</string>
+    <string name="settings_tail_bodyweight_no_match">No habits match your search.</string>
+    <string name="settings_done">Done</string>
+    <string name="settings_tail_bodyweight_placeholder">Kenga exercise name (blank = none)</string>
+    <string name="settings_tail_bodyweight_subtypes">Sub-categories: %1$s</string>
+    <string name="settings_storage_section">Storage \u0026 backup</string>
+    <string name="settings_storage_stats">%1$d videos in library · %2$d downloaded · %3$s of video files</string>
+    <string name="settings_storage_hint">Export saves the library (URLs + analysis) as JSON; import merges by video and re-downloads. Per-video delete lives in the Library.</string>
+    <string name="settings_export">Export library</string>
+    <string name="settings_import">Import library</string>
+    <string name="settings_about_version">Kenga 🦘 v1.0.0 — weight-lifting companion (analysis + Tail weights sync)</string>
+    <string name="video_detail_edit_hint">tap to edit</string>
+    <string name="video_detail_rename_title">Rename exercise</string>
+    <string name="video_detail_rename_label">Exercise name</string>
+    <string name="video_detail_rename_suggestions">Suggestions (Tail names first)</string>
+    <string name="video_detail_rename_apply_all">Apply to all videos with this name</string>
+    <string name="video_detail_rename_save">Save</string>
+    <string name="video_detail_muscles_title">Muscle groups</string>
+    <string name="video_detail_log_exercise">Log</string>
+
+    <!-- Player pane (Phase 3) -->
+    <string name="player_enter_fullscreen">Enter fullscreen</string>
+    <string name="player_exit_fullscreen">Exit fullscreen</string>
+    <string name="player_downloading">Downloading…</string>
+    <string name="player_downloading_percent">Downloading… %1$d%%</string>
+    <string name="player_missing_files">Video not downloaded yet</string>
+    <string name="player_retry_download">Retry download</string>
+    <string name="video_detail_section_muscles">Muscle groups</string>
+    <string name="video_detail_section_exercises">Exercises</string>
+    <string name="video_detail_channel_unknown">Unknown channel</string>
+</resources>
